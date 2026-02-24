@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Fishdom Dev Build</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+	background: #f2f2f7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100dvh;
+	padding: 24px;
+}
+.card {
+	background: #fff;
+	border-radius: 16px;
+	padding: 40px 24px;
+	text-align: center;
+	max-width: 360px;
+	width: 100%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+h1 {
+	font-size: 22px;
+	font-weight: 600;
+	color: #1c1c1e;
+	margin-bottom: 6px;
+}
+.version {
+	font-size: 14px;
+	color: #8e8e93;
+	margin-bottom: 32px;
+}
+.install-btn {
+	display: block;
+	width: 100%;
+	padding: 16px;
+	font-size: 17px;
+	font-weight: 600;
+	color: #fff;
+	background: #007aff;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	text-decoration: none;
+}
+.install-btn:active { opacity: 0.8; }
+.note {
+	margin-top: 20px;
+	font-size: 12px;
+	color: #8e8e93;
+	line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<div class="card">
+	<h1>Fishdom Ent</h1>
+	<p class="version">8.0.2</p>
+	<a class="install-btn"
+	   href="itms-services://?action=download-manifest&url=https://stanislav-reheda.github.io/idler_ios/manifest.plist">
+		Install
+	</a>
+	<p class="note">Open in Safari on iPhone.<br>After install: Settings → General → VPN &amp; Device Management → trust the enterprise certificate.</p>
+</div>
+</body>
+</html>
