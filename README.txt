@@ -1,21 +1,17 @@
 Fishdom OTA Install — инструкция
 =================================
 
-1. Деплой на Cloudflare Pages
-   - Создай новый проект на https://dash.cloudflare.com → Pages
-   - Загрузи всё содержимое папки ios_ota_install (app.ipa, manifest.plist, index.html)
-   - После деплоя получишь домен вида: your-project.pages.dev
+1. Структура
+   - index.html и manifest.plist — хостятся на GitHub Pages
+   - app.ipa — хранится в GitHub Release (v8.0.2)
 
-2. Замени REPLACE_ME на реальный домен
-   В двух файлах нужно заменить REPLACE_ME на твой pages.dev домен:
-   - manifest.plist — строка с url (https://REPLACE_ME.pages.dev/app.ipa)
-   - index.html — строка с href (https://REPLACE_ME.pages.dev/manifest.plist)
-   Замени ДО загрузки или передеплой после замены.
+2. Ссылка для установки
+   https://stanislav-reheda.github.io/idler_ios/
 
 3. Установка на iPhone
-   - Открой https://your-project.pages.dev в Safari (только Safari, другие браузеры не поддерживают itms-services)
+   - Открой ссылку в Safari (только Safari, другие браузеры не поддерживают itms-services)
    - Нажми Install
-   - На iPhone появится запрос "your-project.pages.dev would like to install Fishdom" → нажми Install
+   - На iPhone появится запрос на установку → нажми Install
    - Приложение начнёт загружаться на домашний экран
 
 4. Доверие Enterprise сертификату (первый раз)
@@ -25,9 +21,14 @@ Fishdom OTA Install — инструкция
    - Нажми Trust / Доверять
    - Подтверди
 
-5. Важно
+5. Обновление билда
+   - Собери новый IPA
+   - Удали старый Release на GitHub
+   - Создай новый Release с тем же тегом (v8.0.2) и загрузи новый app.ipa
+   - Или создай новый тег и обнови ссылку в manifest.plist
+
+6. Важно
    - Ссылка работает ТОЛЬКО в Safari
-   - HTTPS обязателен (Cloudflare Pages даёт его автоматически)
-   - IPA подписан Enterprise сертификатом — устанавливается на любое устройство без UDID
-   - Размер app.ipa может превышать лимит бесплатного плана Cloudflare Pages (25 MB на файл)
-     Если так — используй Cloudflare R2 Storage или другой хостинг с HTTPS
+   - Репозиторий должен быть публичным, иначе iOS не скачает IPA
+   - IPA подписан Enterprise сертификатом — устанавливается на любое устройство
+   - После установки на всех устройствах можно сделать репо приватным
